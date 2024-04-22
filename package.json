@@ -1,0 +1,28 @@
+{
+  "name": "2024scrapepuppet",
+  "version": "1.0.0",
+  "description": "using puppeteer to scarpe transcripts aqnd more\t",
+  "main": "app2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "IMnDEVmode",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "fs": "^0.0.1-security",
+    "puppeteer": "^22.6.2",
+    "puppeteer-core": "^22.6.2",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IMnDEVmode2024/scrapePuppet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IMnDEVmode2024/scrapePuppet/issues"
+  },
+  "homepage": "https://github.com/IMnDEVmode2024/scrapePuppet#readme"
+}
