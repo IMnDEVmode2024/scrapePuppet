@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcript Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 20px 0;
+        }
+        iframe {
+            width: 80%;
+            height: 450px;
+            max-width: 900px;
+        }
+        .transcript-container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            line-height: 1.5;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .controls a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Transcript Results</h1>
+    <div class="video-container">
+        <iframe id="video-player" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <h2><a href="<%= href %>" target="_blank"><%= videoTitle %></a></h2>
+    <div class="controls">
+        <% if (filePath) { %>
+            <a href="<%= filePath %>" download>Download Transcript</a>
+        <% } %>
+        <a href="/">New Search</a>
+    </div>
+    <div class="transcript-container" id="transcript-container">
+        <% if (transcript.length > 0) { %>
+            <% transcript.forEach((line, index) => { %>
+                <p id="line-<%= index %>" data-start="<%= line.start %>" data-end="<%= line.end %>"><%= line.text %></p>
+            <% }) %>
+        <% } else { %>
+            <p class="error-message">No transcript available for this video.</p>
+        <% } %>
+    </div>
+    <script>
+        // YouTube IFrame API
+        const videoId = '<%= url.split("v=")[1].split("&")[0] %>';
+        const transcriptLines = document.querySelectorAll('.transcript-container p');
+        const player = document.getElementById('video-player');
+        player.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&autoplay=1`;
+
+        let ytPlayer;
+
+        function onYouTubeIframeAPIReady() {
+            ytPlayer = new YT.Player('video-player', {
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.PLAYING) {
+                setInterval(updateTranscriptHighlight, 100);
+            }
+        }
+
+        function updateTranscriptHighlight() {
+            const currentTime = ytPlayer.getCurrentTime();
+            transcriptLines.forEach((line) => {
+                const start = parseFloat(line.getAttribute('data-start'));
+                const end = parseFloat(line.getAttribute('data-end'));
+                line.classList.toggle('highlight', currentTime >= start && currentTime <= end);
+            });
+        }
+
+        // Load the YouTube IFrame API
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    </script>
+</body>
+</html>
