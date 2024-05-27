@@ -1,0 +1,745 @@
+Web Scraping with GPT-4 Vision AI + Puppeteer is Mind-Blowingly EASY!
+https://m.youtube.com/watch?v=fjP328HN-eY
+AI has completely changed the game for
+web scraping so in this video I'll show
+you how you can use the latest AI
+techniques to efficiently scrape data
+including the latest Vision AI model
+which in my view is actually a total
+Game Changer this video is an absolute
+must-watch if you do any kind of web
+scraping in the age of AI in which we're
+living right now so let's say we have
+some kind of travel website we're going
+to scrape some travel data we have some
+options here we have let's see five
+options and we are currently on page one
+and so this is a very common type of
+website and maybe we want to get all the
+nightly rate and the ratings and the
+title of each place here by the way I
+generated these images with AI as well
+look how good they are I I'm really
+amazed at how good all of this is
+working these days look how beautiful
+this is so all of these images are
+actually generated with AI as well but
+let's say we want to get the title price
+and rating of each of these items so the
+easiest way is actually to just
+rightclick few page Source just copy all
+the HTML and just go to chat GPT and
+just dump it in here maybe have like a
+short message here's the HTML of some
+web page and then I'm just going to dump
+it right here and then I'll say uh give
+me the title nightly rate and rating of
+each item and let's see how it does all
+right so it's going to generate here
+after a couple seconds it's finished
+generating response let's see how it did
+so the first one $150 is 100% correct
+44.9 $200 4.5 let's double check $200
+4.5 yeah so this is the easiest way of
+doing it now another thing that they
+help with is the format if I wanted in
+Json format or as a CSV file it's it's
+capable of doing that as well so you
+let's try it in Json format here all
+right so here it's finishing the
+response we got it all in nice Json
+format so you can see how good they are
+I don't even have to go into the HTML
+and be like hey this is the HTML element
+that you need to get the title and then
+this one for the price you can just dump
+in the entire HTML structure and it can
+ract exactly what you want so doing it
+manually copying all the HTML and
+dumping it in chat GPT is one way of
+doing it now of course open AI the
+company behind it also offers you an API
+so you can programmatically do this
+which is probably what we want to do
+because if you want to collect a lot of
+data it's not efficient to do it
+manually so we want to do it
+programmatically so let's say I have a
+Javascript file here I know a lot of you
+are going to be coming from a python
+background but my channel is Javascript
+so we're going to take a look at some
+JavaScript code here so let's say we
+have some function here it's going to be
+Asing cuz we're going to do a bunch of
+await and after that we're actually
+going to call it right so all of the
+logic is going to be in this function
+here so let's try doing the exact same
+but just programmatically by using the
+open AI API and to use that API we do
+need to instantiated here so we do need
+to install the open AI package as well
+which I already did so I can just import
+that right here I actually already added
+my API key in a EnV file we do need to
+load that in the file here though so I
+can use the EMV package which will load
+up all of the variables from myv file so
+now we have the open AI variable here
+which we can then use to access its
+various apis so one of those apis is the
+chat completion that's actually the most
+common one so we want to create a new
+chat here so we can say messages we can
+have a lot of things here actually a
+history of messages we can specify uh
+some kind of system role I find actually
+not necessary you can keep it pretty
+basic it will produce good result so
+here we can say this is a user message
+so we can just pass along the same
+message as what we did in jet GPT so
+here we can say something like here is
+the HTML actually I'll make it a
+template literal so we can easily use a
+variable in here here is the HTML of
+some travel website now we don't
+actually have the HTML here yet so we
+need to actually use Puppeteer or
+something like that to get the actual
+HTML we'll do that in a second we still
+need to get the HTML from that website
+right so we're going to get it here's
+the HTML travel website give me the
+title nightly rate and the rating of
+each item in let's say Json format right
+so this will give us some response all
+right so this is how we can
+programmatically hook into open AIS
+models now we do need to get the HTML in
+the first place so how do we get the
+HTML of this page how do we get that
+programmatically well you could make a
+simple fetch call with Just note fetch
+or whatever fetching Library you have in
+your programming language but usually we
+do want to get a little bit fancier like
+taking a screenshot or clicking on
+certain elements so we'll use Puppeteer
+here now one of the problems you're
+going to run into is is that when you
+make requests to a website which is what
+we're going to do here is you're going
+to get blocked and so these websites
+often have Protections in place and they
+will restrict you do do things like rate
+limiting so what we're going to do is
+we're not going to directly make a
+network request ourselves we're going to
+do it through a proxy and we're going to
+use bright data for that they have a
+scraping browser product which we can
+use with Puppeteer to deal with those
+restrictions that you inevitably are
+going to run into so I actually did
+another video with bright data some time
+ago in which we did some e-commerce web
+scraping so check out that video as well
+so once you log into the dashboard and
+created your proxy cuz we're going to
+make a request through bright data they
+will give you your information down here
+I don't want to show it cuz it's it's my
+username and password but that's all you
+need it's super easy to set up so that's
+one part now the other part is we want
+to get the HTML with Puppeteer now to
+make this work with bright data I'm
+going to use Puppeteer core so what I'm
+going to install here is actually
+Puppeteer Dash core this will not
+install a complete chromium version but
+only the core functionality let me
+install this all right so now we have
+Puppeteer now we also have bright data
+so now we actually want to get the HTML
+so what we can do is simply use
+Puppeteer here make sure you import it
+from Puppeteer core and here we need to
+connect with that proxy that bright data
+gives us because then the request will
+go through bright data which helps with
+those restrictions so we say browser WS
+endpoint and it's WSS and let me
+actually make this a template literal
+because here you need to add your
+username and password and that's
+actually all the setup that you need I
+actually put that in an environment
+variable which I called bright data off
+this is myv file and the way that looks
+is just username colon password you put
+your username there and the password
+there and that's all you need to make
+sure that the requests go through bright
+data now here we do need to add
+something else which is the host here
+actually so here this host I will and
+just paste that so this is all we need
+to get connected to Bright data and now
+it's just business as usual with
+Puppeteer here so we have a browser here
+now we can open up a page now I also
+like to set the viewboard Because by
+default uh Puppeteer sets the viewport
+pretty small I like to make it more like
+a desktop now actually it suggests these
+for me actually that's fine with me so
+this is essentially all just set up here
+now we actually want to go to the page
+go to the Target website then we can get
+the HTML so we can say page. go to now
+where do we want to go to so in this
+example I actually spun up a simple
+website here on Heroku so I'm just going
+to copy this and I will actually put
+this in a separate variable here Target
+URL and I paste that right there now I
+can copy this variable and that's where
+we want to go to right so I will replace
+that with this all right now with
+Puppeteer now when we arrive at that
+page we don't immediately want to get
+the HTML because there could be some
+JavaScript there could be other things
+still affecting the HTML so we want to
+wait a little bit so here we can specify
+some options so wait until Dom content
+loaded there are other options as well
+like Network Idol and then some number
+zero seems to be popular here and what
+you may also want to do is just have a
+plain second or so of just waiting so in
+JavaScript what you can do is you can
+just create a new promise and wait and
+resolve that after let's say 1 second
+all right so you don't need to know
+JavaScript this is just a way of
+sleeping in JavaScript for a second all
+right so then here we can actually
+collect the data that we want right so
+we want the actual HTML and that is very
+easy to do with Puppeteer as well we can
+do page. content it will give us the
+complete HTML once we get the HTML we
+want to give that to open Ai and just
+like what we did manually before here's
+all the HTML give me the data now we're
+doing it programmatically now before we
+do that I highly recommend that you
+actually just log and see what you get
+for the HTML because remember you're
+paying for whatever you're passing to
+open AI we'll talk more about pricing as
+well but you do want to make sure that
+you're not you know passing too much
+especially here with just raw HTML I
+find that often you actually you have a
+lot of text in the HTML that you don't
+need so let me actually run this script
+so I'm going to say not scraper JS right
+so we're just logging the HTML to see
+what we get all right so we got a
+warning here we can ignore that all
+right so after a couple seconds I get
+all the HTML here you can see Florentine
+Hills Resort that is indeed what we have
+here on the page as well so let's
+actually see this is what we're all
+going to pass to open AI right right now
+you can see here above the body we also
+have a bunch of styles so there are
+styling here and let's see and then here
+even more right so here we have even
+more styling you can see there's
+actually a lot of things going on here
+and if you don't change this this is
+what you would pass to open AI right
+which costs a lot of tokens you're going
+to pay a lot for this so typically you
+do want to do a little bit of processing
+here before you actually pass it off to
+open AI one simple thing we can do is
+only continue with whatever is in the
+body we don't want to have all that
+styling we only want to continue here
+with whatever is in the body now my
+co-pilot should actually be able to help
+me out pretty well with this so let's
+see if it can pick up on what I want to
+do here all right so here it can
+evaluate this within the context of the
+page so it will run in the Dom of that
+page and it will give me the inner HTML
+of the body and that actually should
+work so I'm going to lck this one more
+time and now we don't even need this one
+because it can do it directly here on
+the page itself so I'm going to run this
+one more time let's see what we get all
+right so here I get my HTML again and
+let's see if that other stuff has been
+removed now you can see it's much
+shorter right so this is a simple way of
+just cleaning things up a little bit we
+actually don't even need this line
+anymore actually let me just change this
+because this is how we're collecting the
+data and we also want to close the
+browser because you can see here my
+terminal here is not finished yet right
+so here we do want to make sure that we
+close the browser and then after that we
+can make the actual call to open AI we
+don't need to browser for that this is
+just for collecting the data now we can
+pass it off to open AI for analysis so
+let's actually make this work so I'm
+going to say open AI give me the title
+nightly rate and rating now it expects
+the HTML here so let's actually rename
+this to HTML right so this is the HTML
+that we want to have some analysis on
+and that's what we're passing to openai
+open will give us a response it will
+actually give a lot of information I
+like to log the entire response and I
+will add the number one to that because
+it giv some other information as well
+like how many tokens you used and other
+things as well so I like to lock the
+entire thing and the ual data that
+you're actually interested in so like
+the the response to your chat message is
+typically quite nested yeah so here you
+can see my copilot helps me out
+response. data choices. message. content
+so this is typically the actual data so
+let's actually log both and see what we
+get I'm going to clear my terminal and
+and then I'm going to run this script
+widen it a little bit okay so we
+actually got a problem here which says
+You must provide a model of course yeah
+so here I didn't specify the model that
+we want to use so let's use the latest
+one at time of recording that's actually
+let's see GPT for Turbo prevum let me
+clear this and try this again it may
+actually take some time but you can see
+now we have an issue here U I'm probably
+not using the correct format here but at
+least we we are logging the complete
+response here so for number one yeah so
+here it will give us some information so
+the amount of tokens we used these are
+what we gave to the model so prompt
+tokens and also how many tokens we got
+back so how many so how big the response
+was you pay for both actually also of
+Interest usually is the Finish reason so
+stop is actually usually a good sign if
+there's a problem usually it has a
+different finish reason so here it
+probably should not be data in here so I
+should just make this response do
+choices take the first one do message
+and then there is some content in there
+so I'm going to clear this one more time
+and then let's get the data one more
+time all right so after a couple seconds
+I get this result let's take a look the
+first part here is the complete response
+but now we are correctly logging the
+data that we're actually interested in
+and it gave us the following so FIS
+Palace suet 1504 .9 F
+p4.9 so that looks all right right
+Florentine 200 Florentine 2004.5 yeah so
+so now we can programmatically scrape
+the data through a proxy so we don't get
+blocked and then programmatically pass
+it off to open AI to get some analysis
+on that so this is already much more
+scalable than doing it the manual way or
+getting blocked all the time now one
+downside is that you do need to make a
+call to open AI each time we can prevent
+that by just taking the HTML that we get
+and just doing that analysis ourselves
+so instead of making a call to open AI
+here is maybe where we would have our
+own analysis code and we can actually
+ask Chad GPT for that as well so I'm
+going to copy that HTML actually and
+then I'm going to here's the body HTML
+of some page I'm scraping I'm going to
+dump that HTML in there write some code
+to get me the title nightly rate and the
+rating of each item in Json format so
+let's see what it can do with that so
+it's going to do some analysis here all
+right so here it's going to go with the
+response so it says something about
+extracted on information now it gives me
+the actual Json uh data which is not
+what we want no give me the actual code
+to get that information okay so it gives
+me it in Python no give me this in JS so
+here it gives me a suggestion you can
+put your HTML in some variable and then
+here it's going to run some write some
+actual code to actually extract that
+information so here you can see it can
+already pick up where you can find the
+title nightly rate and rating right so
+in the past you had to dig down into the
+HTML and then here is the H2 that's what
+we want to use right because these llms
+are really good at text and analysis and
+that is ultimately what code is it's
+just a bunch of text so it's very good
+at extracting the exact information that
+we want so this is the code that we want
+to run on that HTML right so you can run
+this code instead of making that call to
+open AI right so you could save money
+that way now there are some issues with
+this approach as well which is that if
+the HTML is a little bit complex you
+often do need to go into the HTML and
+specify which tags to use and often
+those bigger websites will actually
+deliberately change the HTML structure
+so that so that you can properly scrape
+it so every time they change the HTML
+you would have to update this code as
+well another problem is that if you do
+it this text way because we're just
+getting the information from text
+essentially the problem with this will
+be that if you have let's say a website
+that has some kind of strike through and
+then a discount price maybe this 150 is
+a strike through and there's like $90
+next to it now in the HTML it may not be
+clear that this $150 has a strike
+through right that's just CSS the line
+through there is just CSS so any HTML
+that may be detectable and so if you do
+it this text based way it may still
+think that the nightly rate is just this
+$150 let same so those are the downsides
+of text based scraping and extracting
+the data based on the text so let's
+actually take a look at the vision API
+that open AI also offers us so it's GPT
+for vision and they give some examples
+here but let's actually take a look at
+our codes to see what we need to change
+in order to get the same results based
+on the vision API and we're also going
+to take a look at which one is going to
+be cheaper the tech text based way or
+the vision API so here we were getting
+the HTML and then passing that to open
+AI That's the text based way you could
+say now what we want to do is we want to
+take a screenshot and we want to pass
+along that screenshot to open AI so I'm
+going to remove this we don't want to
+collect HTML anymore we want to take a
+screenshot very easy to do works with
+bright data scraping browser here as
+well no problem we can take a screenshot
+here and here we can specify the path
+under which it's going to save it here
+in my file system now the important
+thing to note here is that the extension
+that you use will determine what type of
+file it's going to be so here it's going
+to be a PNG file which has the highest
+quality because it's lossless there's
+but it also comes at an additional price
+because remember we're going to pass
+this to open AI in a second and based on
+how large the image is you're going to
+have to pay basically your prompt token
+so instead you may want to use a jpack
+which is slightly lower quality but you
+save a lot in size and another thing is
+we do want to grab the entire page so by
+default it will only grab it whatever is
+in the view Port so then it would only
+grab this part here but we want to have
+the entire page let's see what happens
+now and let's let me comment out this
+entire open Ai call because we're going
+to change that so I'm going to comment
+this out for now so we're just going to
+see if we can get a screenshot here so
+here we should see a screenshot pop up
+I'm going to run this script let's see
+all right so here we got an issue here
+because we're still using the response
+variable but and that's what we just
+commented out but we do get a screenshot
+here and this looks perfectly fine so
+now this screenshot is what we're going
+to pass to open AI so open AI should you
+should be able to see that there is $150
+here in the text there is some rating
+here a title let's see if it can
+actually properly extract that from the
+image so let me comment this back in
+again so here we now have a screenshot
+we close the browser and now we want to
+pass off the screenshot to open AI so
+how does the API change here well not
+much at all actually it's still going to
+be this chat completions but the model
+is going to be GPT 4 Vision preview and
+you're still working with messages so
+let me replace this with what it should
+be so I just replaced this with what it
+should be for the GPT Vision model so
+here it's still going to be Ro user and
+then we have an array of content here so
+we tell open AI give me the title
+nightly rate and the rating of each item
+in Jon format at the exact same as
+before but now we're not passing along
+the HTML as you can see here now the
+second object is going to be the image
+that we can pass along so here the type
+actually needs to be image URL and then
+here we have image URL which is another
+object here and then we have the actual
+URL to the image now you may think
+actually co-pilot thought it was going
+to be yeah it was going to be something
+like this now this doesn't work you can
+only pass in a URL like that if it's a
+Public Image so maybe you have uploaded
+this somewhere you you can just give
+open a URL of that now here we have a
+local image it's part of my file system
+here on my local computer so in that
+case we cannot pass a URL like that we
+need to do it in base 64 encoded format
+and actually it's very easy to do with
+Puppeteer we can actually just specify
+the encoding here to be base 64 and
+that's what you get as a result here so
+we can just call it base 64 image or
+image base 64 so now this will hold
+basically a string which represents the
+image that's what we pass along now
+under URL here still and actually it
+needs to be in a specific format here so
+we can actually yeah you copilot
+actually helps me out here so it's going
+to be data image jpack and then it's
+going to be the base 64 string like this
+all right so this is basically it all
+right so now we are passing along this
+image let's actually see if it can give
+us what we want so I'm going to clear
+this I'm going to run this one more time
+let's take a look all right so after
+sometime let make a little bit wider we
+get a result and this result looks very
+similar to what we got before that's a
+good sign here we also get some
+information about how many tokens it
+used we can compare this with how much
+it cost previously when we were just
+passing the HTML in seconds but here we
+are getting the data that we want right
+so Fen is 150 4.9 Fen is 150 4.9 so that
+all looks good we get we seem to get
+correct result here and so this approach
+is maybe what you want to go for
+especially if you have complex HTML
+structure but the text based way may not
+work properly or you have a lot of fancy
+CSS that may not be picked up by the
+text based approach so we're also going
+to take a look at what is cheaper maybe
+this is actually cheaper than the text
+based approach right all working still
+with bright data proxy here right so
+we're still always making the initial
+request to this page here through bright
+data so we don't get blocked and then
+here we can still take a screenshot that
+still works as well all of that is still
+working as well you also may want to add
+the max tokens option here so by default
+it's actually pretty low so you may
+actually get a result where it says
+something about uh that it doesn't have
+enough space to Output the result and in
+that case the Finish reason will
+actually be something else so that's why
+you want to take a look at the Finish
+reason if you run into that you may
+actually want to increase the amount of
+tokens right so they give 300 in one of
+their examples now we don't need that
+for this case so here let's take a look
+we for this image here that we were
+passing this resulted in 1128 tokens as
+an input now they give you a way of
+changing this or at least playing around
+with this so they give you the detail
+option here so you can actually also set
+it to low and what it will do is it will
+take your incoming image it will resize
+it to make lower resolution and then it
+will pass it to the model which should
+dramatically decrease your amount of
+tokens actually so let's actually take a
+look so here 1128 let's remember that
+I'm going to run this again all right so
+here I get a result again and now let's
+take a look how many tokens we used we
+used 108 tokens remember previously it
+was
+1128 so this is a dramatic decrease but
+let's actually see if it did it properly
+so Venice $219 per night no that's not
+correct that's so we have fenis it
+should be 150 and the rating is 4.9
+that's correct but you can see here it
+starts to make mistakes right so this is
+something you want to play with depends
+a bit on how this is actually much
+cheaper and actually on the pricing page
+here you can play around with this so
+here Vision price calculator you can see
+if the image that you pass to the model
+becomes bigger the price increases here
+right now if you make it low resolution
+it will be a fixed low resolution so no
+matter how big the initial image is that
+you pass to open AI it will be a fixed
+price here as this calculator is showing
+it will increase the likelihood of
+Mistakes by default it's actually set to
+aut Auto I believe so open a will
+actually take a look at your image and
+will decide for you what the resolution
+should be right so maybe this is not
+something you want to use right so just
+the standard setting gave us correct
+result but it it cost us something like
+1128 in tokens if we compare that with
+the text approach I'm going to contrl Z
+back to our text based approach so we
+can take a look at those at that amount
+of tokens so we don't need a screenshot
+here all right so here I control Z all
+the way back to the text based approach
+so now it's going to be based on the
+HTML that we passed to open AI now we
+did do some clean up of the HTML before
+we passed it right so if you just pass
+along the entire HTML how much would
+that cost us let's take a look right so
+this is going to be the cost giving the
+complete HTML to open AI all right so
+then here we get a response and actually
+we still have the same mistake where
+this should of course be without data
+but that doesn't matter because we're
+interested in the tokens you can see
+this is much more remember with just the
+image we had something like 1,00 here
+it's 90,000 to tokens because I'm
+passing along the entire HTML which
+could have a lot of things in there that
+we're simply not interested in I think I
+probably lose a couple dollars on just
+this one request right now so hopefully
+you're enjoying the video and so for the
+text based approach I think it's really
+important that you clean up the HTML
+before you do anything else with it cuz
+it can have so many things that you're
+not interested in which will affect
+everything else Downstream right so let
+me just do it with the cleaner HTML
+let's see what result we get all right
+so here I get a result let's see how
+many tokens this cost cost me here I'm
+actually only paying about 600 tokens so
+this would be a bit cheaper than the
+vision right now but it's also because
+it's simply a very small page right so
+this is a very simple page there's not
+that much HTML if you just look at the
+body tag now I did some other tests and
+actually most most of the time actually
+the vision API will actually be cheaper
+because in the real world the HTML is
+going to be more complex definitely make
+that comparison yourself to see how much
+you can save so one more thing about the
+vision API I just so this Vision API is
+interesting because you can also ask for
+other things like clickable elements
+give me the coordinates of all clickable
+elements on this page so let's actually
+see what it gives us because if it can
+give us the coordinates of buttons and
+links we can use those coordinates to
+instruct Puppeteer to click on them
+which means we can easily do pagination
+but also if you have like a popup it can
+identify the like a cross and then maybe
+it can click that button to close the
+popup all right so here what we get is
+let's take a look so here I'm sorry but
+I can provide coordinates right so it's
+not able to do that right now now my
+guess is that this is going to rapidly
+improve in the next few months open AI
+seems to really be focusing on images
+and videos right now so it should be
+able to detect that at the bottom here
+we have a set of buttons here for
+example I think that should be pretty
+easy to identify so that's something
+that I think is going to become quite
+powerful as well and so with all of
+these AI tools and now also with bright
+data scraping browser you have a very
+powerful web scraping setup this is how
+I would do web scraping this is a very
+convenient scalable way of doing web
+scraping right now now I'm using
+puppeteers so that's why we're using
+scraping browser they have an even
+simpler solution here called Web
+unlocker in case you're just doing
+Simple fetch calls yourself without
+Puppeteer it works very similarly so you
+just connect to their proxy and you pass
+along your username and password so I
+want to thank Bri data for sponsoring
+this video and I hope that this was
+helpful for your web scraping Endeavor
+thanks for watching this video and I
+hope to see you next one bye

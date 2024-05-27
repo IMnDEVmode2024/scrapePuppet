@@ -1,0 +1,219 @@
+Midpage Tutorial
+https://m.youtube.com/watch?v=3X8Cxn3FHrk
+hey I'm James I'm a former litigator I'm
+going to walk you through how to get
+started on Mid page we're going to go
+through a concrete example just to
+orient yourself here on the left on the
+bottom here you can manage your account
+settings and with this button you can
+navigate through your research history
+for different research sessions I'm
+going to go ahead and start a fresh one
+for this
+tutorial so the first thing I'm going to
+do is click on this new issue icon here
+and I'm going to edit the title to be
+non-compete
+research and I'm going to enter in a few
+material facts um I don't have to give
+away anything confidential if you're
+worried about that um we don't store any
+of your data anyway but you can keep it
+as broad as you
+want so in this specific example uh I'm
+filing a preliminary injunction to
+prevent my client's former employee from
+working at a competitor and I've just
+listed out four key terms from the
+non-compete agreement that he had
+signed and I'm going to fill out the
+motion type here
+preliminary
+injunction my desired outcome is granted
+since I'm filing it and that will
+automatically save so now that I've
+saved some background facts I can enter
+in a
+search I could use Boolean operators
+which if you've used Lexus or Westlaw
+case text um you might be familiar with
+I'm sure you are there's a list of them
+here but you can also just search like
+you would on Google with key terms so
+let's just do a simple search
+non-compete preliminary
+injunction and let's set our
+jurisdiction to the second Circuit Court
+of Appeals edny and
+sdny and that will load
+automatically um another thing I can do
+to
+more narrowly tailor my search results
+is click this button and by clicking
+this button I'm also going to be running
+a search for things that are responsive
+to the facts that I've entered here so
+let's go ahead and click
+that so let's walk through what you can
+do on any given search result in mid
+page obviously you get the responsive
+snippet um nothing new there but you can
+click this outcome drop down and what
+this will give you is an AI generated
+summary of the case so you have the
+procedural posture and the outcome you
+can click here for more detailed summary
+if you would like that it will list
+facts issue Holdings um you can also
+click on the compare facts feature and
+once you've entered in facts here it
+will take these and compare them to the
+facts in this case so let's run through
+that first we'll get a list of similar
+arities um and every similarity will be
+linked to a source quote which is
+hyperlink and clicking on it will
+automatically take me to that
+section you will also
+get a list of
+distinctions so for example Geographic
+scope in your case is anywhere in the
+United States which is signific broader
+than the 10 m radius applied in the
+provided case in Golden Crust
+here so if you bring your attention to
+the right hand side of any search result
+you can see when you last saw this case
+so I just opened this case so it says
+just now but down here on this case you
+can see that I've seen this case two
+minutes ago um which is a helpful way to
+keep track of things you've seen and
+when you saw them um if a case is not
+relevant to you you can always hide it
+it won't remove it from the search
+completely um but anytime this shows up
+as a search result in this case it will
+be sort of automatically collapsed so
+you can sort of check off what you've
+deemed to be you know not noteworthy or
+things you just want to hide from your
+case or from your search results but I'm
+going to unhide that one um and then
+this Green Dot here indicates that we've
+predicted that this is likely to be a
+favorable case for me um and we've done
+that because we've detected that this
+Golden Crust Patty's case is a
+preliminary injunction case the outcome
+of that motion was that it was granted
+here's a little analysis of why we think
+that it's going to be favorable um and
+you can always override the favorability
+so let's just set that as favorable so
+now that will always be there so one
+feature that people really love is this
+questions feature
+this is a place where you can enter in
+sort of your checklist of questions that
+you need to know about every single case
+you can just enter them in once and then
+I'll show you how you can quickly
+extract answers from every search result
+this is helpful
+because normally we'd keep these things
+in our head as we're reading cases which
+is obviously not ideal so let's just say
+what was the geographic
+region by the non compete
+and
+when did
+the what was the relationship
+between I've entered some questions here
+and now anytime that I'm looking at a
+search result I can just immediately
+dive into that specific question and
+generate an
+answer and again we always give you the
+relevant supporting quotes which will be
+hyperlink so this is a great way to skim
+results and really isolate the the
+really important parts of the decisions
+before before even having to open them
+so in this case it was a franchise or
+franchisee relationship I'm talking
+about an employee employer relationship
+in my case but this case is still
+probably helpful and worth reading in
+detail so I'm going to add it to my
+notebook um and let's just go through
+this
+exercise for a couple more
+cases okay so this is an employee
+employer here we didn't find an answer
+this was a motion to dismiss um so could
+be irrelevant to my case let's just set
+it as IR relevant for now and let's also
+hide
+that also take a look at this case here
+so denying a motion for preliminary
+injunction it's likely to be unfavorable
+I'm just going to override that so it's
+set and let's also do a quick quick fact
+comparison so I already learn okay this
+is about Massachusetts law my Cas
+is in New York and let's just assume the
+New York law
+applies um but I'm going to want to add
+this to my notebook so I can come back
+to it and give it a more thorough
+read in the notebook tab you view all of
+the cases that you've saved to this
+particular research session you can dive
+into them with this link and again we
+open the split screen view you have the
+read tab on the left Notebook on the
+right you can
+always click out of one if you
+want and normally if I were using a
+different research platform what I would
+be doing is I would copy relevant
+excerpts and save them into a random
+word document um that's not a great way
+to keep organized notes so instead with
+mid page you can just highlight whatever
+excerpt is relevant just selecting one
+randomly here and add it to your
+notebook and now it will be saved here
+you'll notice that links to other cases
+are highlighted in Gray and the reason
+we do this is because you can hover on
+these cases so instead of having to open
+up all of these cases in new tabs um you
+can just hover get a quick summary of
+the case affirming lower course denial
+so that's actually bad for me I'm going
+to want to review that I can add it to
+my notebook here and I can also just
+dive into the relevant section of this
+case that supports whatever proposition
+is being discussed in Golden
+Crust so let me just add a couple more
+cases and now I'm just going to
+add one or two more excerpts maybe I
+want to go
+into one the other cases let's just add
+some
+more
+chunks so now that I've sort of
+populated my notebook with with relevant
+excerpts like this I can easily export
+this to a nicely formatted Word document
+just by clicking export let's just save
+this
+here and if I ever want to switch
+between my matters jump to a different
+one I can always do that from from this
+navigation
+panel

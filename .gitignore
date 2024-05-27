@@ -1,0 +1,5 @@
+node_modules
+.env
+app.js
+app2.js
+
